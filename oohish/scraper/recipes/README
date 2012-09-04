@@ -1,0 +1,5 @@
+To use the allrecipes.com crawler:
+scrapy crawl allrecipes.com -o scraped_data.json -t json
+
+To use the epicurious.com crawler:
+scrapy crawl epicurious.com -o scraped_data.json -t json

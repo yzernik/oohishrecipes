@@ -1,0 +1,11 @@
+{% extends "oohish_base.html" %}
+{% block title %}Sign In{% endblock %}
+{% block container %}
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+	{% include 'signin_form.html' %}
+	<p>
+	  <h3>Don't have an account?</h3>
+	  <a class="btn btn-primary btn-large" href="signup">Sign Up &raquo;</a></p>
+      </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "oohish_base.html" %}
+{% block title %}{{ user.name }}'s Items{% endblock %}
+{% block container %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+  <h2>{{ user.name }}'s Items</h2>
+  <ul>
+    {% for item in my_items %}
+    <li>{{ item.name.decode('utf-8') }} <a href="/removeitem?name={{ item.name.decode('utf-8') }}">Remove</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% include 'add_item_form.html' %}
+{% include 'search_ingredient_form.html' %}
+{% endblock %}

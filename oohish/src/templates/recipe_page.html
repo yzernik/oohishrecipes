@@ -1,0 +1,14 @@
+{% extends "oohish_base.html" %}
+{% block title %}{{ recipe.name.decode('utf-8') }}{% endblock %}
+{% block container %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+  <h2>{{ recipe.name.decode('utf-8') }}</h2>
+  <!-- Example row of columns -->
+  <ul>
+    {% for ingredient in recipe_ingredients %}
+    <li>{{ ingredient.content.decode('utf-8') }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

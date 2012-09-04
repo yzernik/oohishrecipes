@@ -1,0 +1,13 @@
+{% extends "oohish_base.html" %}
+{% block title %}{{ user.name }}'s Recommended Recipes{% endblock %}
+{% block container %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+  <h2>{{ user.name }}'s Recommended Recipes</h2>
+  <ul>
+    {% for recipe in recommended_recipes %}
+    <li><a href="/recipe?id={{ recipe.id }}">{{ recipe.name.decode('utf-8') }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

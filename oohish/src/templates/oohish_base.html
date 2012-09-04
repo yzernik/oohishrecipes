@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link rel="stylesheet" href="assets/css/bootstrap-responsive.css">
+{% endblock %}
+{% block body %}
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+	  {% block navbar %}
+	  <a class="brand" href="/">Oohish</a>
+	  {% block signin %}
+	  {% if user %}
+	  {% include 'signed_in.html' %}
+	  {% else %}
+	  {% include 'signed_out.html' %}
+	  {% endif %}
+	  {% endblock %}
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li {% block homeattribute %}{% endblock %}><a href="/">Home</a></li>
+              <li {% block aboutattribute %}{% endblock %}><a href="/about">About</a></li>
+              <li {% block contactattribute %}{% endblock %}><a href="/contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+
+	  {% endblock %}
+	</div>
+      </div>
+    </div>
+    <div class="container">
+    {% block container %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    <hr>
+    <footer>
+    {% block footer %}
+    <p>&copy; Oohish.com 2012</p>
+    {% endblock %}
+    </footer>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block javascript %}
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    {% endblock %}
+{% endblock %}

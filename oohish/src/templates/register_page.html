@@ -1,0 +1,20 @@
+{% extends "out_base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block container %}
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+	<form id='login' action='register' method='post' accept-charset='UTF-8'>
+	  <fieldset >
+	    <legend>Register</legend>
+	    <input type='hidden' name='submitted' id='submitted' value='1'/>
+	    <label for='username' >username:</label>
+	    <input type='text' name='username' id='username'  maxlength="50" /><br/>
+	    <label for='password' >password:</label>
+	    <input type='password' name='password' id='password' maxlength="50" /><br/>
+	    <label for='repeat_password' >repeat password:</label>
+	    <input type='password' name='repeat_password' id='repeat_password' maxlength="50" /><br/>
+	    <input type='submit' name='Submit' value='Submit' />
+	  </fieldset>
+	</form>
+      </div>
+{% endblock %}

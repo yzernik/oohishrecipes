@@ -1,0 +1,31 @@
+{% extends "oohish_base.html" %}
+{% block title %}{{ user.name }}'s Profile{% endblock %}
+{% block container %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+  <h2>{{ user.name }}'s Profile</h2>
+  <!-- Example row of columns -->
+</div>
+<ul class="thumbnails">
+  <li class="span3">
+    <a href="/myitems" class="thumbnail">
+      <ul class="thumbnails">
+	{% for thumbnail_item in thumbnail_items %}
+	<li>{{ thumbnail_item.name.decode('utf-8') }}</li>
+	{% endfor %}
+      </ul>
+      <h5><u>Items</u></h5>
+    </a>
+  </li>
+  <li class="span3">
+    <a href="/recommendedrecipes" class="thumbnail">
+      <ul class="thumbnails">
+	{% for thumbnail_recipe in thumbnail_recipes %}
+	<li>{{ thumbnail_recipe.name.decode('utf-8') }}</li>
+	{% endfor %}
+      </ul>
+      <h5><u>Recipes</u></h5>
+    </a>
+  </li>
+</ul>
+{% endblock %}

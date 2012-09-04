@@ -1,0 +1,13 @@
+{% extends "oohish_base.html" %}
+{% block title %}Ingredient Search{% endblock %}
+{% block container %}
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+  <h2>Ingredient Search</h2>
+  <ul>
+    {% for ingredient in search_ingredients %}
+    <li>{{ ingredient.content.decode('utf-8') }} <a href="/myitems?suggest={{ ingredient.content.decode('utf-8') }}">Add Item</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

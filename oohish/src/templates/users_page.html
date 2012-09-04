@@ -1,0 +1,10 @@
+{% extends "out_base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block container %}
+<h1>Members</h1>
+<ul>
+  {% for user in users %}
+  <li>{{ user }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
